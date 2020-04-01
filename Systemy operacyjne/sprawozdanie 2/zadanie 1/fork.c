@@ -5,7 +5,7 @@
 #include <signal.h>
 int kill(pid_t pid, int sig);
 #define N 2048
-int line = 0;
+int line = 1;
 int savedLine = 0;
 int count = 0;
 int lines = 0;
@@ -16,10 +16,10 @@ int spaceCheck(FILE * file,int needLine, int pid){
     int count = 0;
     file = fopen("lorem","r");
     
-    for (int i = 0; i<needLine; i++){
+    for (int i = 1; i<=needLine; i++){
         fgets (arr,N,file);
         }
-        for (int i = 0; i<N; i++){
+        for (int i = 1; i<N; i++){
             if(arr[i] == ' '){
             count++;
             } else if (arr[i] == '\0'){
